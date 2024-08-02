@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://hwk61qih7l2t"]
+
+[ext_resource type="Script" path="res://Script/Player.gd" id="1_10gn7"]
+[ext_resource type="Texture2D" uid="uid://csa6ajpagifqm" path="res://Sprite/PersoJameGame.png" id="2_jvfb1"]
+[ext_resource type="Texture2D" uid="uid://b2m4fskawlajb" path="res://Sprite/Glasses.png" id="3_gqsuu"]
+[ext_resource type="Texture2D" uid="uid://btkaikmbjygml" path="res://Sprite/Flashlight.png" id="3_s2fpt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o3k4b"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="Gradient" id="Gradient_ebgr6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x41s8"]
+gradient = SubResource("Gradient_ebgr6")
+fill = 1
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_10gn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_o3k4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_jvfb1")
+
+[node name="Glasses" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(5.0946e-07, 17.5463)
+rotation = -1.5708
+scale = Vector2(0.346645, 0.405861)
+texture = ExtResource("3_gqsuu")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(28.7223, 0.234106)
+rotation = 1.5708
+scale = Vector2(3.08924, 3.93975)
+texture = ExtResource("3_s2fpt")
+texture_scale = 0.95
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-3.84251, 4.87163e-07)
+rotation = 1.5708
+scale = Vector2(0.192836, 0.152951)
+texture = SubResource("GradientTexture2D_x41s8")
