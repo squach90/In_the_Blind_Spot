@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://r4oxrs38cvin"]
+
+[ext_resource type="Texture2D" uid="uid://be3binhkt7vn5" path="res://Tilemap/roguelikeDungeon_transparent.png" id="1_004vs"]
+[ext_resource type="Script" path="res://Script/Torch.gd" id="1_xehpp"]
+[ext_resource type="Texture2D" uid="uid://c7mv83midm4fu" path="res://Sprite/TorchLight.png" id="3_8howp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5yfc"]
+atlas = ExtResource("1_004vs")
+region = Rect2(221, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2xhp"]
+atlas = ExtResource("1_004vs")
+region = Rect2(238, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rb16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5yfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2xhp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c1qu"]
+size = Vector2(12, 16)
+
+[node name="Torch" type="StaticBody2D"]
+script = ExtResource("1_xehpp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3rb16")
+frame_progress = 0.0765821
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8c1qu")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3.8147e-06, -3)
+scale = Vector2(0.2, 0.2)
+color = Color(1, 0.525975, 0.00864428, 1)
+texture = ExtResource("3_8howp")
