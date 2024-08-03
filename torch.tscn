@@ -39,8 +39,14 @@ frame_progress = 0.0765821
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8c1qu")
 
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(3.8147e-06, -3)
+scale = Vector2(0.2, 0.2)
+color = Color(1, 1, 1, 0.270588)
+texture = ExtResource("3_8howp")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(3.8147e-06, -3)
 scale = Vector2(0.2, 0.2)
-color = Color(1, 0.525975, 0.00864428, 1)
+color = Color(0.611765, 0.313726, 0, 1)
 texture = ExtResource("3_8howp")

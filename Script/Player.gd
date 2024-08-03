@@ -26,4 +26,5 @@ func _process(delta: float) -> void:
 		current_velocity = current_velocity.move_toward(Vector2.ZERO, acceleration * delta)
 	velocity = current_velocity
 		# Appliquer la vélocité mise à jour avec move_and_slide()
-	move_and_slide()
+	if Global.canMove:
+		move_and_slide()

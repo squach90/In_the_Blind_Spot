@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cepdfkerw4cpw"]
+[gd_scene load_steps=16 format=3 uid="uid://cepdfkerw4cpw"]
 
 [ext_resource type="Texture2D" uid="uid://be3binhkt7vn5" path="res://Tilemap/roguelikeDungeon_transparent.png" id="1_j445o"]
 [ext_resource type="PackedScene" uid="uid://dcnp34e0gal6i" path="res://ui.tscn" id="1_kwflu"]
@@ -1825,6 +1825,23 @@ fog_density = 0.3727
 fog_height = 461.8
 fog_height_density = 11.2941
 
+[sub_resource type="Gradient" id="Gradient_h4gyg"]
+colors = PackedColorArray(0, 0, 0, 1, 0.337255, 0.666667, 0.701961, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dqg1p"]
+gradient = SubResource("Gradient_h4gyg")
+fill_from = Vector2(0.573276, 1)
+fill_to = Vector2(0.530172, 0)
+
+[sub_resource type="Gradient" id="Gradient_2v2fx"]
+offsets = PackedFloat32Array(0.0119048, 1)
+colors = PackedColorArray(0.337255, 0.666667, 0.701961, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ylbch"]
+gradient = SubResource("Gradient_2v2fx")
+fill_from = Vector2(0.543103, 0)
+fill_to = Vector2(0.525862, 1)
+
 [node name="Main" type="Node2D"]
 
 [node name="Icon5" type="Sprite2D" parent="."]
@@ -1885,6 +1902,17 @@ energy = 0.99
 blend_mode = 2
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="WorldEnvironment"]
+position = Vector2(-88.076, -145.489)
+rotation = 3.14159
+scale = Vector2(0.658626, 2.57846)
+texture = SubResource("GradientTexture2D_dqg1p")
+
+[node name="PointLight2D2" type="PointLight2D" parent="WorldEnvironment"]
+position = Vector2(-88, -32)
+scale = Vector2(1.21875, 0.96875)
+texture = SubResource("GradientTexture2D_ylbch")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10

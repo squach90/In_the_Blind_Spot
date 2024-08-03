@@ -32,6 +32,10 @@ click={
 ]
 }
 
+[maaacks_credits_scene]
+
+disable_plugin_dialogues=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
