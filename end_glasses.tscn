@@ -18,7 +18,6 @@ shape = SubResource("RectangleShape2D_cnkd1")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-8.9407e-07, -4.76837e-07)
-scale = Vector2(1, 1)
 texture = ExtResource("1_thpih")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
