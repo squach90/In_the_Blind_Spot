@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2m4fskawlajb" path="res://Sprite/Glasses.png" id="1_thpih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnkd1"]
-size = Vector2(34, 12)
+size = Vector2(34, 18)
 
 [node name="EndGlasses" type="Area2D"]
 script = ExtResource("1_quyhq")
@@ -13,6 +13,12 @@ script = ExtResource("1_quyhq")
 texture = ExtResource("1_thpih")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_cnkd1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-8.9407e-07, -4.76837e-07)
+scale = Vector2(1, 1)
+texture = ExtResource("1_thpih")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

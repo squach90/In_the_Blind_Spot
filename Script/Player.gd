@@ -8,7 +8,7 @@ var current_velocity = Vector2.ZERO
 func _process(delta: float) -> void:
 	
 	if !Global.GlassesIsVisible:
-		$Sprite2D/Glasses.hide()
+		$Sprite2D/EndGlasses.hide()
 	
 	var mouse_position = get_global_mouse_position()
 		
@@ -27,4 +27,6 @@ func _process(delta: float) -> void:
 	velocity = current_velocity
 		# Appliquer la vélocité mise à jour avec move_and_slide()
 	if Global.canMove:
+		Global.currentV = current_velocity.length()
+		print(Global.currentV)
 		move_and_slide()

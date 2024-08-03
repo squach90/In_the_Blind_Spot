@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd0xja84usoy3"]
+
+[ext_resource type="Script" path="res://Script/DetectionSpeedBarrier.gd" id="1_tygbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olnlg"]
+size = Vector2(15, 53.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmtuh"]
+size = Vector2(28, 57)
+
+[node name="SpeedBarrier" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_olnlg")
+
+[node name="DetectionSpeedBarrier" type="Area2D" parent="."]
+script = ExtResource("1_tygbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionSpeedBarrier"]
+position = Vector2(6, 0.5)
+shape = SubResource("RectangleShape2D_nmtuh")
+
+[connection signal="body_entered" from="DetectionSpeedBarrier" to="DetectionSpeedBarrier" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectionSpeedBarrier" to="DetectionSpeedBarrier" method="_on_body_exited"]

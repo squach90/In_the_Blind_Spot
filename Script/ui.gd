@@ -10,8 +10,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$InGame/Coordinate.text = str(Player.global_position)
-
-
+	if Global.gameIsFinish:
+		Global.canMove = false
+		$EndScreen.show()
+	if Global.morespeed:
+		$InGame/MoreSpeedText.show()
+	else:
+		$InGame/MoreSpeedText.hide()
 
 func _on_play_btn_pressed():
 	Global.canMove = true
