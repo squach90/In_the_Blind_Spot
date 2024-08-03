@@ -2,18 +2,14 @@
 ## Collaborators
 
 ### Role
-Person 1  
-Person 2  
-[Person w/ Link]()  
-
+squach90 (Dev)
+[Itch.io](https://squach90.itch.io)  
+[Github.com](https://github.com/squach90)  
 
 ## Sourced / Unaffiliated
 ### Asset Type
 #### Use Case
-Author: [Name]()  
-Source: [Domain : webpage.html]()  
-License: [License]()
-
+Author: [Kenney](https://kenney.nl)  
 
 ## Tools
 #### Godot
@@ -30,3 +26,4 @@ License: [GNU General Public License version 2](https://opensource.org/licenses/
 Author: [Marek Belski](https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors)  
 Source: [github: Godot-Credits-Scene](https://github.com/Maaack/Godot-Credits-Scene)  
 License: [MIT License](LICENSE.txt)  
+

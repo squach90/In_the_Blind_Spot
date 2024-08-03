@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcnp34e0gal6i"]
+[gd_scene load_steps=14 format=3 uid="uid://dcnp34e0gal6i"]
 
 [ext_resource type="Script" path="res://Script/ui.gd" id="1_osolf"]
 [ext_resource type="FontFile" uid="uid://b7ag8u8adymcd" path="res://Fonts/NO.TTF" id="2_8p3aw"]
 [ext_resource type="FontFile" uid="uid://pp7m6mtrooif" path="res://Fonts/BLACEB__.TTF" id="2_pj2da"]
 [ext_resource type="FontFile" uid="uid://bnat3gffw1jcc" path="res://Fonts/Horror.ttf" id="3_n60iy"]
+[ext_resource type="PackedScene" uid="uid://bagraegk311h0" path="res://addons/maaacks_credits_scene/examples/scenes/EndCredits/EndCredits.tscn" id="5_f6dek"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2w4x"]
 
@@ -193,6 +194,7 @@ text = "Back"
 flat = true
 
 [node name="EndScreen" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -200,14 +202,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="EndScreen"]
+[node name="EndCredits" parent="EndScreen" instance=ExtResource("5_f6dek")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="MainScreen/PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="MainScreen/OptionMain" to="." method="_on_option_main_pressed"]
